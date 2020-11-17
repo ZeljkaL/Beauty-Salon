@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.portfolio {
+  color: white;
+
+  background: radial-gradient(rgb(53, 9, 51), rgb(0, 0, 0));
+}
+
+nav {
+  min-height: 10vh;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+nav h3 {
+  font-weight: lighter;
+}
+
+.logo {
+  width: 130px;
+  height: 70px;
+}
+
+.hamburger {
+  width: 32px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.content {
+  background: rgba(10, 10, 10, 0.89);
+  opacity: 0;
+}
+
+.content.active {
+  opacity: 1;
+  display: flex;
+
+  justify-content: center;
+  width: 100px;
+  height: 400px;
+  opacity: 1;
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  margin-left: 15%;
+  margin-right: 15%;
+  bottom: 0;
+  z-index: 1;
+}
+.content ul {
+  margin-top: 200px;
+  position: absolute;
+}
+.content ul a {
+  text-decoration: none;
+}
+.content li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 55px;
+  font-size: 35px;
+  font-family: "Rockwell Nova Cond";
+
+  color: white;
+  text-shadow: 1px 1px 1px #222;
+}
+.content li:hover {
+  color: gray;
+}
+
+.page {
+  min-height: 86vh;
+  display: grid;
+  grid-template-columns: 5% 1fr 1fr 1fr 5%;
+}
+
+.hairstyle,
+.nails {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.hero {
+  overflow: hidden;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  height: 550px;
+}
+.hero a {
+  display: flex;
+}
+.hero img {
+  height: 550px;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+.model_right {
+  transform: translate(0%, 10%);
+}
+
+.hero:hover .model_right {
+  transform: translate(0%, 0%);
+}
+.model_left {
+  transform: translate(0%, -10%);
+}
+
+.hero:hover .model_left {
+  transform: translate(0%, 0%);
+}
+
+.details {
+  grid-column: 2/3;
+  align-self: end;
+  font-family: "Rockwell Nova Cond";
+}
+.details h1 {
+  font-size: 45px;
+  font-weight: lighter;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.details h3 {
+  font-size: 36px;
+  padding: 20px 0px;
+  font-weight: lighter;
+  opacity: 0.8;
+}
+.details p {
+  font-size: 24px;
+  padding: 20px 0px 50px 0px;
+  font-weight: lighter;
+  opacity: 0.5;
+}
+
+.pages {
+  font-family: "Rockwell Nova Cond";
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pages div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pages h3 {
+  opacity: 0.3;
+  font-size: 24px;
+  padding: 30px;
+}
+.pages h3.active {
+  opacity: 1;
+}
+
+.pages img {
+  cursor: pointer;
+  opacity: 0.3;
+  transition: scale(2);
+}
+.pages img:hover {
+  animation: dott 0.5s ease-in-out infinite alternate;
+}
+.pages img.active {
+  opacity: 1;
+}
+
+@keyframes dott {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.6);
+  }
+}
+
+@media (max-width: 1024px) {
+  .portfolio {
+    color: white;
+  }
+  .page {
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 2fr 1fr;
+    align-items: center;
+    
+  }
+  .hero {
+    grid-column: 2/3;
+    height: auto;
+  }
+  .hero img {
+    height: 400px;
+  }
+  .details {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    text-align: center;
+  }
+  .details h1 {
+    font-size: 40px;
+  }
+  .details h3 {
+    font-size: 30px;
+  }
+  .details p {
+    font-size: 20px;
+  }
+
+  .pages h3 {
+    font-size: 15px;
+    padding: 30px 15px;
+  }
+}
